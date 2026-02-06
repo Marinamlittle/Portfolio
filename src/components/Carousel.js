@@ -1,5 +1,5 @@
 import React from 'react'
-
+/**TODO: CAMBIAR LAS EXPORTACIONES INNECESARIAS POR ICONOS REACT */
 import html5Icon from '../img/html5.png';
 import css3Icon from '../img/css3.png';
 import jsIcon from '../img/js.png';

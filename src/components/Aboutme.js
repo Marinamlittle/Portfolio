@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { MdOutlinePhoneEnabled } from "react-icons/md";
-
 import { SiGmail } from 'react-icons/si';
 import CV_Icono from '../img/CV.png';
 
@@ -18,17 +17,6 @@ export const Aboutme = () => {
 
   return (
     <section className="aboutme-container" >
-      
-      {/* <div className="social-sidebar izquierda">
-        
-        <a href="https://wa.me/34601377978" target="_blank" rel="noreferrer" title="WhatsApp">
-          <FaWhatsapp className="social-icon" />
-        </a>
-        <div className="discord-container" onClick={copiarDiscord} title="Copiar Usuario Discord">
-          <FaDiscord className="social-icon" />
-          {discordCopiado && <span className="tooltip-copiado">¡Copiado!</span>}
-        </div>
-      </div> */}
 
       <div className='card-border-animated' >
         <div className='contenido' id='sobremi'>
@@ -53,6 +41,7 @@ export const Aboutme = () => {
               Durante mis prácticas profesionales diseñé y desarrollé más de 10 páginas web para clientes reales, 
               además de adquirir conocimientos en SEO y publicidad digital.
             </p>
+            
             {/* BOTON CV */}
             <a 
                 href="/MMLCV.pdf"
@@ -67,16 +56,7 @@ export const Aboutme = () => {
         </div>
       </div>
 
-      {/* <div className="social-sidebar derecha">
-        <a href="mailto:marinaml201101@gmail.com" title="Enviar Correo">
-            <SiGmail className="social-icon" />
-        </a>
-        <a href="+34601377978" title="Llamar">
-            <FaPhone className="social-icon" />
-        </a>
-      </div> */}
-
-      {/* Hablamos? */}
+            {/* Hablamos? */}
       <div className='hablamos'>
           <p className='texto-hablamos'>¿Hablamos?</p>
           <div className='iconos-hablamos'>

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { nombre, profesion } from './PrimerComponente';
-
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { misDatos } from '../data/misDatos';
+
 
 export const Encabezado = () => {
   const [textoAnimado, setTextoAnimado] = useState('');
-  const textoCompleto = profesion;
+  const textoCompleto = misDatos.profesion;
 
   useEffect(() => {
     let indice = 0;
@@ -23,21 +23,34 @@ export const Encabezado = () => {
   }, [textoCompleto]);
 
   return (
-    <div>
+    
       <section id="inicio" className="seccion-inicio">
         
-        <h2 className="titulo-seccion">{textoAnimado}</h2>
-        <h2 className="nombre-seccion">{nombre}</h2>
+        <h2 className="titulo-seccion">{misDatos.profesion}</h2>
+        <h2 className="nombre-seccion">{misDatos.nombre}</h2>
 
         <div className="boton-seccion">
-          <a href="https://www.linkedin.com/in/marina-mateo-lara-1b2213284/" target="_blank" rel="noreferrer" title="LinkedIn">
+      
+          <a 
+            href={misDatos.linkedin}
+            target="_blank" 
+            rel="noreferrer" 
+            aria-label="Visitar perfil de LinkedIn"
+          >
             <FaLinkedin className="social-icon" />
-          </a>         
-          <a href="https://github.com/Marinamlittle" target="_blank" rel="noreferrer" title="GitHub">
-          <FaGithub className="social-icon" />
+          </a> 
+          
+          <a 
+            href={misDatos.github}
+            target="_blank" 
+            rel="noreferrer" 
+            aria-label="Visitar perfil de GitHub"
+          >
+            <FaGithub className="social-icon" />
           </a>
-        </div>
-      </section>
+
     </div>
+      </section>
+    
   );
 };

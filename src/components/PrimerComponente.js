@@ -1,8 +1,6 @@
 import React from 'react';
 import foto from '../img/mml2.jpg';
-
-export let nombre = "Marina Mateo Lara";
-export let profesion = "Frontend Developer";
+import { misDatos } from '../data/misDatos';
 
 export const PrimerComponente = () => {
 
@@ -21,7 +19,7 @@ export const PrimerComponente = () => {
     
     if (element) {
       
-      const headerOffset = 90; // Ajusta esto según la altura de tu navbar
+      const headerOffset = 90;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
   
@@ -40,14 +38,14 @@ export const PrimerComponente = () => {
           <img
             src={foto}
             className="foto-encabezado"
-            alt="Foto MML2"
+            alt="Foto Marina Mateo Lara"
             width="150"
             height="150"
           />
 
           <div className="texto-encabezado">
-            <h1 className="nombre-encabezado">{nombre}</h1>
-            <h2 className="profesion-encabezado">{profesion}</h2>
+            <h1 className="nombre-encabezado">{misDatos.nombre}</h1>
+            <h2 className="profesion-encabezado">{misDatos.profesion}</h2>
           </div>
         </div>
 

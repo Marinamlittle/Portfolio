@@ -115,14 +115,11 @@ html{
 .titulo-seccion{
     color: var(--amarillo-pastel);
     font-size: 30px;
-    font-weight: 400;
-    
-    
+    font-weight: 300;
     display: inline-block;
     border-right: 3px solid var(--amarillo-pastel);
     padding-right: 5px;    
-    min-height: 60px;
-    
+    min-height: 30px;
     animation: blink 0.75s step-end infinite;
 }
 
@@ -361,7 +358,7 @@ html{
 
 .hablamos {
     position: absolute;
-    bottom: 110px;
+    bottom: 120px;
     right: 60px;
     display: flex;
     flex-direction: column;
@@ -439,3 +436,117 @@ html{
     }
 }
 
+/*Tecnologias*/
+
+.fondo-tecnologias {
+    background-color: var(--negro);
+    color: var(--blanco-hueso);
+    text-align: center;
+}
+
+.titulo-tecnologias {
+    color: var(--azul);
+    font-size: 24px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.descripcion {
+    color: var(--blanco-hueso);
+    font-size: 16px;
+    max-width: 700px; 
+    margin: 15px auto;  
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* 2. El contenedor que pone las tarjetas lado a lado */
+.contenedor-cards {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 2rem; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 3. Las Tarjetas Grandes */
+.card-grupo {
+    background-color: var(--negro-claro); 
+    border: 1px solid var(--azul);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin: 15px 0;
+}
+
+/* Títulos de colores */
+.titulo-card {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+.seccion-frontend { color: var(--azul) ;}
+.seccion-backend { color: var(--blanco-hueso); }
+.seccion-aprendiendo{ color: var(--violeta);}
+.seccion-herramienas{ color: var(--texto-principal)}
+
+.grid-iconos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.item-tecnologia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.item-tecnologia:hover {
+    transform: scale(1.1);
+}
+
+.nombre-tech {
+    font-size: 0.8rem;
+    
+}
+.card-grupo {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-grupo.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@keyframes giroReact {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.item-tecnologia:hover .react-icon-spin {
+    animation: giroReact 5s linear infinite; 
+}
+
+.icono-tech {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.icono-tech svg, .icono-tech img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+}
