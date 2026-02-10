@@ -49,7 +49,8 @@ export const Encabezado = () => {
             <FaGithub className="social-icon" />
           </a>
 
-    </div>
+      </div>
+      
       </section>
     
   );

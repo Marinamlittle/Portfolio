@@ -1,10 +1,8 @@
 import React from 'react';
-import foto from '../img/mml2.jpg';
+import foto from '../img/mmldev.png';
 import { misDatos } from '../data/misDatos';
-
 export const PrimerComponente = () => {
 
-  // 1. CREAMOS UNA LISTA DE DATOS (Array)
     const menuItems = [
       { id: 'inicio', label: 'Inicio' },
       { id: 'sobremi', label: 'Sobre mí' },
@@ -12,7 +10,6 @@ export const PrimerComponente = () => {
       { id: 'proyectos', label: 'Proyectos' },
     ];
 
-  // 2. FUNCIÓN PARA EL SCROLL SUAVE
   const handleScroll = (e, id) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -49,7 +46,6 @@ export const PrimerComponente = () => {
           </div>
         </div>
 
-        {/* 3. RENDERIZADO DINÁMICO DEL MENÚ */}
         <ul className="menu">
           {menuItems.map((item) => (
             <li key={item.id}>
@@ -62,6 +58,7 @@ export const PrimerComponente = () => {
               </a>
             </li>
           ))}
+            
         </ul>
       </nav>
     </header>

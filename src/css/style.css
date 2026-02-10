@@ -1,4 +1,4 @@
-/* <--!  Mis estilos    */
+/*   Mis estilos    */
 :root{
     --texto-principal: #9fa2a4;
     --amarillo-pastel: #FAFF94;
@@ -7,7 +7,23 @@
     --negro: #1C1C1C;
     --violeta: #CA82D8;
     --azul: #82B3D9;
+    --azul-oscuro: #242A2B;
+    --azul-claro: #4D7598;
 }
+
+/*Cursor*/
+.cursor-trail {
+    width: 100px;
+    height: 100px;
+    background: #454e4a; 
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    filter: blur(80px);
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out;
+  }
 
 html{
     box-sizing: border-box;
@@ -17,11 +33,11 @@ html{
     font-family: "Poppins", sans-serif;
     margin: 0;
     scroll-behavior: smooth;
-    scroll-padding-top: 90px; /* Exactamente la altura de tu navbar */
-    
+    scroll-padding-top: 90px;
 }
 
-/* Estilos del encabezado */
+
+/* Encabezado */
 .navbar {
     background-color: var(--negro);
     display: flex;
@@ -33,41 +49,39 @@ html{
     background-color: var(--negro);
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     padding: 10px 20px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.intro:hover .foto-encabezado {
-    outline: 2px solid var(--azul);
-    outline-offset: 3px;
-    transform: rotate(5deg) scale(1.05);
-}
-
-.intro:hover .nombre-encabezado {
-    color: var(--blanco-hueso);
-}
 .foto-encabezado {
-    width: 52px;
-    height: 50px;
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
     margin-left: 150px;
 }
-.texto-encabezado{
-    display: flex;
-    flex-direction: column;
-    line-height: 1.3;
-}
+
 .nombre-encabezado{
     color:  var(--blanco-hueso);
-    font-weight: 400;
+    font-weight: 500;
     font-size: 16px;
 }
 .profesion-encabezado{
     font-size: 12px;
-    color: var(--amarillo-pastel);
+    color: var(--azul);
     font-weight: 500;
 }
+.nombre-encabezado:hover {
+    letter-spacing: 1px; 
+    cursor: pointer;
+    transition: 0.3s;
+}
+.profesion-encabezado:hover {
+    color: var(--blanco-hueso);
+    letter-spacing: 1px; 
+    transition: 0.3s;
+}
+
 /*Menu*/
 .menu {
     display: flex;
@@ -87,7 +101,7 @@ html{
 }
 
 .menu a:hover {
-    color: var(--amarillo-pastel);
+    color: var(--azul);
     transform: scale(1.15);
 }
 
@@ -113,9 +127,9 @@ html{
 }
 
 .titulo-seccion{
-    color: var(--amarillo-pastel);
+    color: var(--azul);
     font-size: 30px;
-    font-weight: 300;
+    font-weight: 500;
     display: inline-block;
     border-right: 3px solid var(--amarillo-pastel);
     padding-right: 5px;    
@@ -125,7 +139,7 @@ html{
 
 @keyframes blink {
     from, to { border-color: transparent }
-    50% { border-color: var(--amarillo-pastel) }
+    50% { border-color: var(--azul) }
 }
 
 .nombre-seccion{
@@ -150,11 +164,11 @@ html{
 }
 
 .boton:hover{
-    background-color: #FAFF94;
+    background-color: var(--blanco-hueso);
     color: var(--negro-claro);
 }
 
-/*CV*/
+/*boton cv*/
 .CV {
     display: flex;
     align-items:center;
@@ -179,10 +193,9 @@ html{
 
 .CV:hover {
     transform: translateY(-5px);
-    background-color: var(--amarillo-pastel);
+    background-color: var(--azul);
     color: var(--negro-claro);
-    box-shadow: 0 10px 20px rgba(250, 255, 148, 0.3);
-    border: 1px solid var(--amarillo-pastel);
+    border: 1px solid var(--negro-claro);
 }
 
 .CV:hover img {
@@ -231,7 +244,7 @@ html{
     }
 }
 
-/*Sobremi*/
+/*Sobre mi*/
 .aboutme{
     padding: 150px 10px;
     display: flex;
@@ -297,26 +310,25 @@ html{
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
 /*Iconos en seccion sobre mi*/
 .aboutme-container {
     background-color: var(--negro);
     position: relative;
     width: 100%;
-    min-height: 115vh;
+    min-height: 110vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
 
-/* Estilos de las columnas laterales */
 .social-sidebar {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-/* Estilos comunes de los iconos */
 .social-icon {
     font-size: 1.5rem; 
     color: var(--blanco-hueso); 
@@ -326,9 +338,9 @@ html{
 
 
 .social-icon:hover {
-    color: var(--amarillo-pastel);
+    color: var(--azul);
     transform: scale(1.2);
-    filter: drop-shadow(0 0 10px rgba(253, 255, 133, 0.6));
+    filter: drop-shadow(0 0 10px var(--negro));
 }
 
 .discord-container {
@@ -354,7 +366,6 @@ html{
     to { opacity: 1; transform: translateY(0); }
 }
 
-/*hablamos?*/
 
 .hablamos {
     position: absolute;
@@ -429,124 +440,334 @@ html{
         transform: translate(0px, 0px);
     }
     50% {
-        transform: translate(0px, -10px); /* Sube 10px */
+        transform: translate(0px, -10px);
     }
     100% {
         transform: translate(0px, 0px);
     }
 }
 
-/*Tecnologias*/
 
+/*Tecnologias*/
 .fondo-tecnologias {
     background-color: var(--negro);
     color: var(--blanco-hueso);
     text-align: center;
+    min-height: 80vh;
+    padding-bottom: 80px;
 }
 
 .titulo-tecnologias {
     color: var(--azul);
-    font-size: 24px;
-    text-align: center;
+    font-size: 30px;
     font-weight: 500;
     margin-bottom: 15px;
+    cursor: pointer;
 }
 
 .descripcion {
     color: var(--blanco-hueso);
     font-size: 16px;
     max-width: 700px; 
-    margin: 15px auto;  
+    margin: 15px auto 50px auto;
     line-height: 1.6;
-    text-align: left;
+    text-align: center; 
+    opacity: 0.9;
+
 }
 
-/* 2. El contenedor que pone las tarjetas lado a lado */
 .contenedor-cards {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 2rem; 
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* 3. Las Tarjetas Grandes */
-.card-grupo {
-    background-color: var(--negro-claro); 
-    border: 1px solid var(--azul);
-    border-radius: 20px;
-    padding: 2rem;
-    width: 100%;
-    max-width: 400px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    margin: 15px 0;
-}
-
-/* Títulos de colores */
-.titulo-card {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    font-weight: 500;
-}
-.seccion-frontend { color: var(--azul) ;}
-.seccion-backend { color: var(--blanco-hueso); }
-.seccion-aprendiendo{ color: var(--violeta);}
-.seccion-herramienas{ color: var(--texto-principal)}
-
-.grid-iconos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 1.5rem;
-    justify-items: center;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto;  
+    gap: 1.5rem; 
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.item-tecnologia {
+.area-frontend {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3; 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    transition: transform 0.3s ease;
+    justify-content: center; 
 }
 
-.item-tecnologia:hover {
-    transform: scale(1.1);
+.area-backend {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
 }
 
-.nombre-tech {
-    font-size: 0.8rem;
-    
+.area-herramientas {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
 }
+
 .card-grupo {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: var(--negro-claro);
+    border: 1px solid rgba(97, 218, 251, 0.2); 
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
 .card-grupo.visible {
     opacity: 1;
     transform: translateY(0);
 }
-@keyframes giroReact {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+
+.card-grupo:hover {
+    transform: translateY(-10px);
+    border-color: var(--azul);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(97, 218, 251, 0.1);
 }
 
-.item-tecnologia:hover .react-icon-spin {
-    animation: giroReact 5s linear infinite; 
+.titulo-card {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-weight: 500; 
+    text-align: center;
+    color: var(--blanco-hueso); 
+    position: relative;
+}
+
+.titulo-card::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--azul);
+    margin: 10px auto 0;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.card-grupo:hover .titulo-card::after {
+    width: 80px; 
+}
+
+.grid-iconos {
+    display: flex;       
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; 
+}
+
+.item-tecnologia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    transition: transform 0.3s ease;
+    width: 80px; 
+}
+
+.item-tecnologia:hover {
+    transform: translateY(-5px) scale(1.05); 
 }
 
 .icono-tech {
-    width: 40px;
-    height: 40px;
+    width: 45px; 
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
+    filter: grayscale(100%) opacity(0.7);
+    transition: all 0.4s ease;
 }
 
 .icono-tech svg, .icono-tech img {
     width: 100% !important;
     height: 100% !important;
     object-fit: contain;
+}
+
+.card-grupo:hover .icono-tech {
+    filter: grayscale(0%) opacity(1);
+}
+
+.nombre-tech {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--blanco-hueso);
+    opacity: 0.6; 
+    transition: opacity 0.3s ease;
+}
+
+.card-grupo:hover .nombre-tech {
+    opacity: 1; 
+}
+
+/* Animación React */
+@keyframes giroReact {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.item-tecnologia:hover .react-icon-spin {
+    animation: giroReact 3s linear infinite; 
+}
+
+/* --- RESPONSIVE DESIGN (Móvil) --- */
+@media (max-width: 768px) {
+    .contenedor-cards {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 2rem;
+    }
+
+    /* Reseteamos el grid */
+    .area-frontend, .area-backend, .area-herramientas { 
+        grid-column: auto;
+        grid-row: auto;
+    }
+    
+    .icono-tech {
+        filter: grayscale(0%) opacity(1);
+    }
+}
+
+ /* PROYECTOS*/
+.proyecto{
+    display: flex;
+    width: 100%;
+    background-color: var(--negro);
+    height: 90vh; 
+    overflow: hidden;
+}
+.caja-izquierda {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 0px 20px 0px 150px;
+}
+.caja-izquierda h2{
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--blanco-hueso);
+    margin-top: -170px;
+}
+.caja-izquierda h2:hover{
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: 0.2s;
+    color: var(--texto-principal);
+}
+
+.caja-izquierda h3{
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--blanco-hueso);
+    cursor: pointer;
+}
+
+.caja-izquierda p{
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--texto-principal);
+    width: 60%;
+    padding-bottom: 250px;
+}
+
+
+.boton-seccion-proyectos{
+    display: flex;
+    gap: 1rem;
+    justify-content: left;
+}
+/*caja derecha proyectos*/
+.caja-derecha {
+    flex: 1.5; 
+    display: flex;
+    flex-direction: column;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overscroll-behavior-y: contain;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.card-proyecto {
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    width: 90%;
+}
+.card-proyecto:hover {
+    background: var(--azul-oscuro);
+    border-radius: 10px;
+}
+.card-proyecto:hover h4{
+    color: var(--azul-claro);
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.proyecto-screenshot img {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid var(--negro-claro);
+    margin-top: 10px;
+}
+.tag-tech {
+    background: var(--azul-claro);
+    color: var(--blanco-hueso);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 1rem;
+    display: inline-block;
+    font-size: 12px;
+}
+.proyecto-info {
+    padding: 10px;
+    display: grid;
+    gap: 10px;
+}
+
+.proyecto-tecnologias {
+    display: flex;
+    gap: 15px;
+    font-size: 1.5rem;
+    color: var(--azul);
+    margin-top: 15px;
+}
+.proyecto-info h4{
+    font-size: 16px;
+    color: var(--blanco-hueso);
+    font-weight: 500;
+}
+
+.proyecto-info p{
+    color: var(--texto-principal);
+    font-size: 14px;
+}
+
+.caja-derecha:hover .card-proyecto {
+    opacity: 0.6; 
+    filter: blur(1px);
+    transition: all 0.3s ease;
+}
+
+.caja-derecha .card-proyecto:hover {
+    opacity: 1;
+    filter: blur(0);
+    background-color: rgba(255, 255, 255, 0.05);
 }
