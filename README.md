@@ -68,7 +68,7 @@ Para explorar el código o realizar modificaciones en tu entorno local, sigue es
 
 ¡Me encantaría conectar contigo! Puedes encontrarme en las siguientes plataformas:
 
-* **LinkedIn:** [linkedin.com/in/tu-perfil](https://www.linkedin.com/in/tu-perfil)
+* **LinkedIn:** [linkedin.com/in/tu-perfil]([https://www.linkedin.com/in/tu-perfil](https://www.linkedin.com/in/mmldev/)
 * **Email:** [marinaml201101@gmail.com](mailto:marinaml201101@gmail.com)
 * **Web Personal:** [marinamlittle.github.io/Portfolio/](https://marinamlittle.github.io/Portfolio/)
 
