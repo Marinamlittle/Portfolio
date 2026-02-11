@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.fdb2acec.css",
+    "main.js": "/Portfolio/static/js/main.666780e1.js",
+    "static/media/nike.png": "/Portfolio/static/media/nike.187a1ce9931ae708813f.png",
+    "static/media/FRESHESSENCE.png": "/Portfolio/static/media/FRESHESSENCE.eb5ac79c1371eb85d161.png",
+    "static/media/festi.png": "/Portfolio/static/media/festi.0fb1998804a2f8149e60.png",
+    "static/media/basicfit.png": "/Portfolio/static/media/basicfit.dca9ad4180fb4aa48ea3.png",
+    "static/media/mmldev.png": "/Portfolio/static/media/mmldev.01b4db1d4217763e7fe0.png",
+    "static/media/react.png": "/Portfolio/static/media/react.86c8d9eba03e29814d2a.png",
+    "static/media/github.png": "/Portfolio/static/media/github.a323e8efefb4d485f4f7.png",
+    "static/media/CV.png": "/Portfolio/static/media/CV.408c6ce7678e779dd343.png",
+    "static/media/wordpress.png": "/Portfolio/static/media/wordpress.11ed091523e3152b651f.png",
+    "static/media/html5.png": "/Portfolio/static/media/html5.2c6a71b184b518b01b9a.png",
+    "static/media/figma.png": "/Portfolio/static/media/figma.72fbc535ebe253a5dbc4.png",
+    "static/media/css3.png": "/Portfolio/static/media/css3.1b6022810693f66c164a.png",
+    "static/media/js.png": "/Portfolio/static/media/js.3dfb665e058d08c99f28.png",
+    "index.html": "/Portfolio/index.html",
+    "main.fdb2acec.css.map": "/Portfolio/static/css/main.fdb2acec.css.map",
+    "main.666780e1.js.map": "/Portfolio/static/js/main.666780e1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fdb2acec.css",
+    "static/js/main.666780e1.js"
+  ]
+}
