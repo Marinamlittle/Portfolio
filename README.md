@@ -56,7 +56,7 @@ Para explorar el código o realizar modificaciones en tu entorno local, sigue es
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone [https://github.com/MarinaMLittle/Portfolio.git](https://github.com/MarinaMLittle/Portfolio.git)
+   git clone [https://github.com/MarinaMLittle/Portfolio.git]
    ```
 2. **Acceder a la carpeta del proyecto:**
 3. **Instalar las dependencias:**
