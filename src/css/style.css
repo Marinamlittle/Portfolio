@@ -695,7 +695,7 @@ html{
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 0;
     overscroll-behavior-y: contain;
     scrollbar-width: none; 
     -ms-overflow-style: none;
@@ -703,9 +703,9 @@ html{
 
 .card-proyecto {
     display: flex;
-    gap: 5px;
     padding: 5px;
     border-radius: 12px;
+    gap: 10px;
     transition: background 0.3s ease;
     cursor: pointer;
     width: 90%;
@@ -772,12 +772,8 @@ html{
     background-color: rgba(255, 255, 255, 0.05);
 }
 .proyecto-link {
-    text-decoration: none; /* Quita el subrayado */
-    color: inherit;        /* Hereda el color de texto que ya tenías */
-    display: block;        /* Hace que todo el espacio sea clickable */
+    text-decoration: none;
+    color: inherit; 
+    display: block;  
     transition: transform 0.3s ease;
-}
-
-.proyecto-link:hover {
-    transform: translateY(-5px); /* Un pequeño efecto de elevación al pasar el ratón */
 }

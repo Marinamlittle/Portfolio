@@ -72,7 +72,8 @@ export function Proyectos() {
                             target="_blank" 
                             rel="noreferrer" 
                             className="proyecto-link"
-                        >
+                            >
+                        </a>
                             <div className="proyecto-screenshot">
                                 <img src={proyecto.imagen} alt={proyecto.titulo} />
                             </div>
@@ -89,7 +90,6 @@ export function Proyectos() {
                                     ))}
                                 </div>
                             </div>
-                        </a>
                     </article>
                 ))}
             </div>
