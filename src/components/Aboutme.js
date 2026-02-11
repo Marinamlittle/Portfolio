@@ -1,20 +1,11 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { MdOutlinePhoneEnabled } from "react-icons/md";
 import { SiGmail } from 'react-icons/si';
 import CV_Icono from '../img/CV.png';
 
 
 export const Aboutme = () => {
-  // const [discordCopiado, setDiscordCopiado] = useState(false);
-
-  // const copiarDiscord = () => {
-  //   const usuarioDiscord = "Marinamlittle#5322";
-  //   navigator.clipboard.writeText(usuarioDiscord);
-  //   setDiscordCopiado(true);
-    
-  //   setTimeout(() => setDiscordCopiado(false), 2000);
-  // };
-
+ 
   return (
     <section className="aboutme-container" >
 
