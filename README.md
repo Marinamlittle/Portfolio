@@ -1,4 +1,4 @@
-# 👩‍💻 Mi Portafolio Personal - Marina Mateo Lara
+# 👩‍💻 Mi Portafolio Personal
 
 ¡Bienvenido/a a mi rincón en GitHub! Este repositorio contiene el código fuente de mi portafolio personal, donde muestro mis proyectos, habilidades y mi trayectoria como desarrolladora.
 
