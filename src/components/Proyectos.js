@@ -14,7 +14,8 @@ const proyectosRealizados = [
         titulo: "Fresh Essence - Pagina Web con Sistema de Citas",
         descripcion: "Mi primer gran paso en el desarrollo. Una aplicación enfocada en la lógica de estados y la organización de componentes para gestionar citas.",
         imagen: proyectoImagen,
-        tecnologias: ["Html", "Css", "JavaScript", "PHP", "MySQL"]
+        tecnologias: ["Html", "Css", "JavaScript", "PHP", "MySQL"],
+        url: "https://github.com/Marinamlittle/Proyecto-Fresh-Essence"
     },
     {
         id:2, 
@@ -66,22 +67,29 @@ export function Proyectos() {
             <div className="caja-derecha">
                 {proyectosRealizados.map((proyecto) => (
                     <article className="card-proyecto" key={proyecto.id}>
-                        <div className="proyecto-screenshot">
-                            <img src={proyecto.imagen} alt={proyecto.titulo} />
-                        </div>
-
-                        <div className="proyecto-info">
-                            <h4>{proyecto.titulo}</h4>
-                            <p>{proyecto.descripcion}</p>
-                            
-                            <div className="proyecto-tecnologias">
-                                {proyecto.tecnologias.map((tech, index) => (
-                                    <span key={index} className="tag-tech">
-                                        {tech}
-                                    </span>
-                                ))}
+                        <a 
+                            href={proyecto.url} 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            className="proyecto-link"
+                        >
+                            <div className="proyecto-screenshot">
+                                <img src={proyecto.imagen} alt={proyecto.titulo} />
                             </div>
-                        </div>
+
+                            <div className="proyecto-info">
+                                <h4>{proyecto.titulo}</h4>
+                                <p>{proyecto.descripcion}</p>
+                                
+                                <div className="proyecto-tecnologias">
+                                    {proyecto.tecnologias.map((tech, index) => (
+                                        <span key={index} className="tag-tech">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </a>
                     </article>
                 ))}
             </div>
