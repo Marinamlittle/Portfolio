@@ -23,7 +23,6 @@ export const Encabezado = () => {
 
   return (
     <section id="inicio" className="seccion-inicio">
-      {/* CAMBIO AQUÍ: Ahora usamos textoAnimado en lugar de misDatos.profesion directamente */}
       <h2 className="titulo-seccion">{textoAnimado}</h2>
       <h2 className="nombre-seccion">{misDatos.nombre}</h2>
 

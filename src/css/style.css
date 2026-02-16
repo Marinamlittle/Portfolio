@@ -514,6 +514,15 @@ html{
     transform: translateY(0px);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
+.card-link {
+    display: flex;          /* Vuelve a poner la imagen al lado del texto */
+    align-items: flex-start;
+    text-decoration: none;  /* Quita el subrayado azul */
+    color: inherit;         /* Mantiene tus colores originales de texto */
+    gap: 10px;              /* Espacio entre imagen e info */
+    width: 100%;
+    padding: 0.5rem;
+}
 
 .card-grupo.visible {
     opacity: 1;
@@ -727,6 +736,7 @@ html{
     border: 1px solid var(--negro-claro);
     margin-top: 10px;
 }
+
 .tag-tech {
     background: var(--azul-claro);
     color: var(--blanco-hueso);
