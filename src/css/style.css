@@ -36,61 +36,69 @@ html{
     scroll-padding-top: 90px;
 }
 
-
-/* Encabezado */
+/* --- ESTILOS BASE (ESCRITORIO) --- */
 .navbar {
     background-color: var(--negro);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 40px;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
 }
-.intro{
+
+.intro {
     background-color: var(--negro);
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 20px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 .foto-encabezado {
     width: 60px;
     height: 60px;
-    margin-top: 5px;
-    margin-left: 150px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.nombre-encabezado{
-    color:  var(--blanco-hueso);
+.nombre-encabezado {
+    color: var(--blanco-hueso);
     font-weight: 500;
     font-size: 16px;
+    margin: 0;
+    transition: 0.3s;
 }
-.profesion-encabezado{
+
+.profesion-encabezado {
     font-size: 12px;
     color: var(--azul);
     font-weight: 500;
-}
-.nombre-encabezado:hover {
-    letter-spacing: 1px; 
-    cursor: pointer;
-    transition: 0.3s;
-}
-.profesion-encabezado:hover {
-    color: var(--blanco-hueso);
-    letter-spacing: 1px; 
+    margin: 0;
     transition: 0.3s;
 }
 
-/*Menu*/
+/* Hovers de texto */
+.nombre-encabezado:hover {
+    letter-spacing: 1px;
+}
+
+.profesion-encabezado:hover {
+    color: var(--blanco-hueso);
+    letter-spacing: 1px;
+}
+
+/* Menu */
 .menu {
     display: flex;
     gap: 40px;
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-right: 150px;
 }
+
 .menu a {
     text-decoration: none;
     font-size: 14px;
@@ -102,36 +110,101 @@ html{
 
 .menu a:hover {
     color: var(--azul);
-    transform: scale(1.15);
+    transform: scale(1.1);
 }
 
-.menu a, .iconos img {
+/* Iconos generales */
+.iconos img {
     transition: transform 0.3s;
-  }
-  
-  .menu a:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Para los iconos */
-  .iconos img:hover {
+}
+
+.iconos img:hover {
     transform: scale(1.2);
-  }
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--blanco-hueso);
+    transition: all 0.3s ease;
+}
+
+/* --- RESPONSIVE (MÓVIL Y TABLET) --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: var(--negro);
+        padding: 30px 0;
+        gap: 25px;
+        box-shadow: 0px 10px 15px rgba(0,0,0,0.5);
+    }
+
+    .menu.active {
+        display: flex;
+        background-color: var(--negro-claro);
+        color: var(--blanco-hueso);
+    }
+
+    .profesion-encabezado {
+        display: none;
+    }
+
+    .foto-encabezado {
+        width: 45px;
+        height: 45px;
+    }
+
+    .bar.open:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .bar.open:nth-child(2) {
+        opacity: 0;
+    }
+    .bar.open:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
 
 /*Seccion Inicio*/
 .seccion-inicio {
     background-color: var(--negro);
     color: var(--blanco-hueso);
     text-align: center;
-    padding: 130px 10px;
+    padding: 200px 10px;
 }
 
 .titulo-seccion{
     color: var(--azul);
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 500;
     display: inline-block;
-    border-right: 3px solid var(--amarillo-pastel);
     padding-right: 5px;    
     min-height: 30px;
     animation: blink 0.75s step-end infinite;
@@ -144,7 +217,7 @@ html{
 
 .nombre-seccion{
     color: var(--blanco-hueso);
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 500;
 }
 .boton-seccion{
@@ -153,6 +226,19 @@ html{
     justify-content: center;
     margin-top: 30px;
 }
+.social-icon:hover {
+    color: var(--azul);
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px var(--negro));
+}
+
+.social-icon {
+    font-size: 2rem; 
+    color: var(--blanco-hueso); 
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
 .boton{
     color: var(--negro);
     background-color:  var(--azul);
@@ -168,27 +254,79 @@ html{
     color: var(--negro-claro);
 }
 
+/*Media Querys Seccion Inicio*
+/* --- TABLETS (Menos de 768px) --- */
+@media (max-width: 768px) {
+    .seccion-inicio {
+        padding: 90px 20px;
+    }
+
+    .titulo-seccion{
+        font-size: 30px;
+
+    }
+    .nombre-seccion {
+        font-size: 40px;
+    }
+
+    .boton-seccion {
+        gap: 0.8rem;
+    }
+    
+    .social-icon {
+        font-size: 1.5rem;
+    }
+}
+
+/* --- MÓVILES (Menos de 480px) --- */
+@media (max-width: 480px) {
+    .seccion-inicio {
+        padding: 60px 10px;
+    }
+    .nombre-seccion {
+        font-size: 26px;
+        display: block;
+    }
+
+    .titulo-seccion {
+        padding-right: 0;
+        margin-bottom: 5px; /* Espacio entre el título animado y el nombre */
+        min-height: auto;
+        font-size: 20px;
+    }
+
+    .boton-seccion {
+        flex-direction: row; /* Botones uno encima de otro */
+        align-items: center;
+        gap: 15px;
+    }
+
+    .boton {
+        width: 80%; /* Botones más anchos y fáciles de pulsar */
+        text-align: center;
+        padding: 12px; /* Área de toque más grande para pulgares */
+        font-size: 15px;
+    }
+}
 /*boton cv*/
 .CV {
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     gap: 10px;
-
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
+    margin: 20px 0 0 0; 
     
     background-color: var(--negro-claro);
     color: var(--blanco-hueso);
-    border: 1px solid #2A2828; 
+    border: 1px solid var(--azul-oscuro); 
     border-radius: 8px;
-    margin-top: 15px;
+    
     height: 3rem;
-    width: 10em;
+    width: 11em; 
     font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .CV:hover {
@@ -199,7 +337,7 @@ html{
 }
 
 .CV:hover img {
-    filter: brightness(0);
+    filter: brightness(0); 
 }
 
 /*Carousel*/
@@ -225,7 +363,7 @@ html{
 }
 .card{
     flex: 0 0 5em;
-    height: 1.5em;
+    height: 3em;
     padding: 0.2em 1em;
     font-size: 3rem; 
     border-radius: .2rem;
@@ -243,14 +381,50 @@ html{
         transform: translateX(-100%);
     }
 }
+/* --- TABLETS (Menos de 768px) --- */
+@media (max-width: 768px) {
+    .card {
+        font-size: 2rem;
+        flex: 0 0 5em;
+        height: 2em;
+        padding: 0.2em 1em;
+    }
+
+    .group {
+        gap: 1em;
+        animation-duration: 12s; 
+    }
+}
+
+/* --- MÓVILES (Menos de 480px) --- */
+@media (max-width: 480px) {
+    .carousel {
+        padding: 10px 0; 
+    }
+
+    .card {
+        font-size: 1.5rem;
+        flex: 0 0 5em;
+        height: 2em;
+        padding: 0.2em 1em;
+    }
+
+    .group {
+        gap: 0.5em;
+        padding-right: 0.5em;
+        animation-duration: 10s; /* Ajustamos la velocidad */
+    }
+    .CV {
+        width: 100%;
+        max-width: 200px;
+        margin: 25px auto 0 auto;
+        height: 3rem;
+        font-size: 14px;
+    }
+
+}
 
 /*Sobre mi*/
-.aboutme{
-    padding: 150px 10px;
-    display: flex;
-    justify-content: center;
-    background-color: var(--negro);
-}
 
 .card-border-animated {
     position: relative;
@@ -262,7 +436,7 @@ html{
     padding: 2px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:center;
 }
 .card-border-animated::before {
     content: "";
@@ -278,11 +452,11 @@ html{
     animation: rotate-border 8s linear infinite;
 }
 
-.contenido{
+.contenido {
     position: relative;
     background-color: var(--negro-claro);
-    border-radius: 13px;
-    padding: 60px 80px;
+    border-radius: 15px;
+    padding: 40px 50px; 
     z-index: 1;
     width: 100%;
     height: 100%;
@@ -300,10 +474,9 @@ html{
 .texto-aboutme p {
     color: var(--blanco-hueso);
     font-size: 16px;
-    max-width: 700px; 
-    margin: 15px auto;  
+    max-width: 900px; 
+    margin: 10px 0 15px 0; 
     line-height: 1.6;
-    
 }
 
 @keyframes rotate-border {
@@ -316,37 +489,11 @@ html{
     background-color: var(--negro);
     position: relative;
     width: 100%;
-    min-height: 110vh;
+    min-height: 90vh;
     display: flex;
-    justify-content: center;
+    justify-content:center; 
     align-items: center;
     overflow: hidden;
-}
-
-.social-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.social-icon {
-    font-size: 1.5rem; 
-    color: var(--blanco-hueso); 
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-
-.social-icon:hover {
-    color: var(--azul);
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 10px var(--negro));
-}
-
-.discord-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
 }
 
 .tooltip-copiado {
@@ -366,19 +513,75 @@ html{
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* --- TABLETS (Menos de 768px) --- */
+@media (max-width: 768px) {
+    .aboutme-container{
+        min-height: 80vh;
+    }
+    .contenido {
+        padding: 30px 25px; /* Menos espacio lateral */
+    }
 
+    .card-border-animated {
+        max-width: 90%; 
+    }
+
+    .titulo-aboutme {
+        font-size: 22px;
+        text-align: left; 
+    }
+
+    .texto-aboutme p {
+        font-size: 15px;
+        text-align: left; /* Opcional: texto centrado en tablets */
+    }
+}
+
+/* --- MÓVILES (Menos de 480px) --- */
+@media (max-width: 480px) {
+    .aboutme-container {
+        min-height: 90vh; 
+    }
+
+    .contenido {
+        padding: 30px 20px;
+    }
+
+    .titulo-aboutme {
+        font-size: 20px;
+        margin-top: 5px;
+    }
+
+    .texto-aboutme p {
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: left;
+    }
+    .card-border-animated::before {
+        width: 300%;
+        height: 300%;
+        animation-duration: 6s; 
+    }
+
+    .tooltip-copiado {
+        top: 50px;
+        font-size: 0.7rem;
+    }
+    
+}
+
+/*Hablamos*/
 .hablamos {
-    position: absolute;
-    bottom: 120px;
-    right: 60px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 15px; 
     padding: 20px 30px;
-    z-index: 100;
-
+    z-index: 2000;
     
     background: rgba(30, 30, 30, 0.6);
     backdrop-filter: blur(12px);
@@ -390,7 +593,6 @@ html{
     
     border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-    
 
     animation: flotar 6s ease-in-out infinite;
     transition: all 0.3s ease;
@@ -447,6 +649,16 @@ html{
     }
 }
 
+/* --- MEDIA QUERY PARA MÓVIL --- */
+@media (max-width: 768px) {
+    .hablamos {
+        right: 15px; 
+        bottom: 15px;
+        padding: 15px 20px;
+        transform: scale(0.9);
+    }
+}
+
 
 /*Tecnologias*/
 .fondo-tecnologias {
@@ -468,12 +680,17 @@ html{
 .descripcion {
     color: var(--blanco-hueso);
     font-size: 16px;
-    max-width: 700px; 
+    max-width: 80rem; 
     margin: 15px auto 50px auto;
     line-height: 1.6;
     text-align: center; 
     opacity: 0.9;
-
+}
+.titulo-tecnologias:hover{
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: 0.2s;
+    color: var(--blanco-hueso);
 }
 
 .contenedor-cards {
@@ -611,6 +828,81 @@ html{
 .card-grupo:hover .nombre-tech {
     opacity: 1; 
 }
+/* TABLETS (Menos de 1024px) */
+@media (max-width: 1024px) {
+
+    .descripcion {
+        max-width: 600px;
+    }
+}
+/* MÓVILES PEQUEÑOS (Menos de 480px) */
+@media (max-width: 480px) {
+    .titulo-tecnologias {
+        font-size: 24px;
+    }
+    .descripcion {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+@media (max-width: 768px) {
+    .fondo-tecnologias {
+        align-items: center;
+        padding-right: 20px;
+        padding-left: 20px;
+        text-align: center;
+    }
+
+    .titulo-tecnologias {
+        text-align: center;
+        font-size: 26px;
+    }
+
+    .descripcion {
+        text-align: center;
+        margin: 15px auto 40px auto; 
+        font-size: 15px;
+    }
+    
+    .contenedor-cards {
+        display: grid;
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .area-frontend, 
+    .area-backend, 
+    .area-herramientas { 
+        grid-column: 1 / -1 !important;
+        grid-row: auto !important;
+        display: block; 
+        width: 100%;
+    }
+
+    .card-grupo {
+        padding: 1.5rem;
+        margin-bottom: 10px; 
+    }
+
+    .icono-tech {
+        filter: grayscale(0%) opacity(1);
+    }
+
+    .nombre-tech {
+        opacity: 1;
+    }
+
+    .titulo-card {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .grid-iconos {
+        gap: 1.5rem;
+    }
+}
 
 /* Animación React */
 @keyframes giroReact {
@@ -622,31 +914,13 @@ html{
     animation: giroReact 3s linear infinite; 
 }
 
-/* --- RESPONSIVE DESIGN (Móvil) --- */
-@media (max-width: 768px) {
-    .contenedor-cards {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 2rem;
-    }
-
-    /* Reseteamos el grid */
-    .area-frontend, .area-backend, .area-herramientas { 
-        grid-column: auto;
-        grid-row: auto;
-    }
-    
-    .icono-tech {
-        filter: grayscale(0%) opacity(1);
-    }
-}
 
  /* PROYECTOS*/
 .proyecto{
     display: flex;
     width: 100%;
     background-color: var(--negro);
-    height: 90vh; 
+    height: 70vh; 
     overflow: hidden;
 }
 .caja-izquierda {
@@ -712,7 +986,7 @@ html{
 
 .card-proyecto {
     display: flex;
-    padding: 5px;
+    padding: 10px;
     border-radius: 12px;
     gap: 10px;
     transition: background 0.3s ease;
@@ -745,6 +1019,12 @@ html{
     font-size: 1rem;
     display: inline-block;
     font-size: 12px;
+}
+.tag-tech:hover{
+    color: var(--negro);
+    background-color: var(--blanco-hueso);
+    transition: 0.3s;
+    cursor: pointer;
 }
 .proyecto-info {
     padding: 10px;
@@ -786,4 +1066,85 @@ html{
     color: inherit; 
     display: block;  
     transition: transform 0.3s ease;
+}
+
+/* --- TABLET (Menos de 1024px) --- */
+@media (max-width: 1024px) {
+    .proyecto {
+        flex-direction: column; /* Apilamos las cajas */
+        height: auto;           /* Quitamos el límite de altura */
+        overflow: visible;      /* Permitimos scroll natural */
+        padding: 60px 20px;
+    }
+
+    .caja-izquierda {
+        padding: 0;
+        align-items: center;    /* Centramos el texto */
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .caja-izquierda h2 {
+        margin-top: 0;          /* Quitamos el margen negativo de PC */
+        font-size: 32px;
+    }
+
+    .caja-izquierda p {
+        width: 100%;            /* Ocupa todo el ancho en tablet */
+        padding-bottom: 20px;
+    }
+
+    .boton-seccion-proyectos {
+        justify-content: center;
+    }
+
+    .caja-derecha {
+        overflow: visible;      /* Quitamos el scroll interno */
+        flex: none;
+        width: 100%;
+        align-items: center;
+    }
+
+    .card-proyecto {
+        width: 100%;            /* Cards más anchas en tablet */
+        max-width: 600px;
+    }
+}
+
+/* --- MÓVIL (Menos de 768px) --- */
+@media (max-width: 768px) {
+    .caja-derecha {
+        gap: 20px; /* Más espacio en móvil para facilitar el scroll táctil */
+    }
+    .proyecto {
+        padding: 40px 15px;
+    }
+
+    .caja-izquierda h2 {
+        font-size: 28px;
+    }
+
+    .card-proyecto {
+        flex-direction: column; 
+        align-items: flex-start;
+        padding: 20px;
+        background-color: var(--negro-claro); 
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .proyecto-screenshot img {
+        width: 100%;            /* Imagen a todo lo ancho de la card */
+        max-width: 280px;
+        margin-top: 0;
+    }
+
+    .proyecto-tecnologias {
+        flex-wrap: wrap;        /* Si hay muchos tags, que bajen de línea */
+        gap: 8px;
+    }
+
+    .caja-derecha:hover .card-proyecto {
+        opacity: 1;
+        filter: none;
+    }
 }

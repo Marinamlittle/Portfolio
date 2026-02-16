@@ -1,52 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import foto from '../img/mmldev.png';
 import { misDatos } from '../data/misDatos';
-export const PrimerComponente = () => {
 
-    const menuItems = [
-      { id: 'inicio', label: 'Inicio' },
-      { id: 'sobremi', label: 'Sobre mí' },
-      { id: 'tecnologias', label: 'Tecnologías' },
-      { id: 'proyectos', label: 'Proyectos' },
-    ];
+export const PrimerComponente = () => {
+  const [isOpen, setIsOpen] = useState(false); 
+
+  const menuItems = [
+    { id: 'inicio', label: 'Inicio' },
+    { id: 'sobremi', label: 'Sobre mí' },
+    { id: 'tecnologias', label: 'Tecnologías' },
+    { id: 'proyectos', label: 'Proyectos' },
+  ];
 
   const handleScroll = (e, id) => {
     e.preventDefault();
-    const element = document.getElementById(id);
     
-    if (element) {
+    setIsOpen(false);
+
+    setTimeout(() => {
+      const element = document.getElementById(id);
       
-      const headerOffset = 90;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-  
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }, 100); 
   };
 
   return (
     <header id='inicio'>
       <nav className="navbar"> 
         <div className="intro">
-          
           <img
             src={foto}
             className="foto-encabezado"
             alt="Foto Marina Mateo Lara"
-            width="150"
-            height="150"
           />
-
           <div className="texto-encabezado">
             <h1 className="nombre-encabezado">{misDatos.nombre}</h1>
             <h2 className="profesion-encabezado">{misDatos.profesion}</h2>
           </div>
         </div>
 
-        <ul className="menu">
+        <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
+          <span className={`bar ${isOpen ? 'open' : ''}`}></span>
+          <span className={`bar ${isOpen ? 'open' : ''}`}></span>
+          <span className={`bar ${isOpen ? 'open' : ''}`}></span>
+        </button>
+
+        <ul className={`menu ${isOpen ? 'active' : ''}`}>
           {menuItems.map((item) => (
             <li key={item.id}>
               <a 
@@ -58,7 +66,6 @@ export const PrimerComponente = () => {
               </a>
             </li>
           ))}
-            
         </ul>
       </nav>
     </header>

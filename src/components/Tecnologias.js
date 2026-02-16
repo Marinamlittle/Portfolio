@@ -66,7 +66,7 @@ export function Tecnologias() {
         <section className='fondo-tecnologias' >
             
             <h2 className="titulo-tecnologias" >Tecnologías</h2>
-            <p className="descripcion"  id="tecnologias">No se trata de usar la tecnología más compleja, sino la adecuada. Esta es mi caja de herramientas actual: una mezcla de lenguajes fiables y nuevas tendencias que hacen el desarrollo más ágil y divertido</p>
+            <p className="descripcion"  id="tecnologias">Mi trabajo se centra en el punto donde el diseño y la funcionalidad se encuentran. Como Frontend Developer, me especializo en construir interfaces que no solo sean visualmente atractivas, sino también intuitivas y accesibles. Mi objetivo es que cada interacción del usuario sea fluida, utilizando arquitecturas modernas para garantizar que el rendimiento sea óptimo en cualquier dispositivo."</p>
 
             <div className="contenedor-cards">
 

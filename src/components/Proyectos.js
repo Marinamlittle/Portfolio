@@ -42,7 +42,7 @@ export function Proyectos() {
     return (
         <section className='proyecto' >
             <div className="caja-izquierda" >
-                <h2>{misDatos.nombre}</h2>
+                <h2>Mis Proyectos</h2>
                 <h3>{misDatos.profesion}</h3>
                 <p className="intro-proyectos">Construyendo bases sólidas a través del código, proyecto a proyecto</p>
 
