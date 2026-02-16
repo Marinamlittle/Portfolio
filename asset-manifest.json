@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.cc45d7fb.css",
+    "main.js": "/Portfolio/static/js/main.831b5a2a.js",
+    "static/media/FRESHESSENCE.png": "/Portfolio/static/media/FRESHESSENCE.eb5ac79c1371eb85d161.png",
+    "static/media/mmldev.png": "/Portfolio/static/media/mmldev.01b4db1d4217763e7fe0.png",
+    "static/media/ToDo.png": "/Portfolio/static/media/ToDo.42e43c6d63853916bb6e.png",
+    "static/media/blackjack.png": "/Portfolio/static/media/blackjack.6e567177072427c5e31b.png",
+    "static/media/react.png": "/Portfolio/static/media/react.86c8d9eba03e29814d2a.png",
+    "static/media/github.png": "/Portfolio/static/media/github.a323e8efefb4d485f4f7.png",
+    "static/media/CV.png": "/Portfolio/static/media/CV.408c6ce7678e779dd343.png",
+    "static/media/wordpress.png": "/Portfolio/static/media/wordpress.11ed091523e3152b651f.png",
+    "static/media/html5.png": "/Portfolio/static/media/html5.2c6a71b184b518b01b9a.png",
+    "static/media/figma.png": "/Portfolio/static/media/figma.72fbc535ebe253a5dbc4.png",
+    "static/media/css3.png": "/Portfolio/static/media/css3.1b6022810693f66c164a.png",
+    "static/media/js.png": "/Portfolio/static/media/js.3dfb665e058d08c99f28.png",
+    "index.html": "/Portfolio/index.html",
+    "main.cc45d7fb.css.map": "/Portfolio/static/css/main.cc45d7fb.css.map",
+    "main.831b5a2a.js.map": "/Portfolio/static/js/main.831b5a2a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc45d7fb.css",
+    "static/js/main.831b5a2a.js"
+  ]
+}
