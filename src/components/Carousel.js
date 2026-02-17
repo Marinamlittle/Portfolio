@@ -8,28 +8,28 @@ import figmaIcon from '../img/figma.png';
 import githubIcon from '../img/github.png';
 import wordpressIcon from '../img/wordpress.png';
 
+const icons = [
+  { src: html5Icon, alt: "HTML5" },
+  { src: css3Icon, alt: "CSS3" },
+  { src: jsIcon, alt: "JS" },
+  { src: reactIcon, alt: "React" },
+  { src: figmaIcon, alt: "Figma" },
+  { src: githubIcon, alt: "GitHub" },
+  { src: wordpressIcon, alt: "WordPress" },
+];
 
 export const Carousel = () => {
+  // Renderizamos el contenido de los iconos una vez
+  const content = icons.map((icon, index) => (
+    <div className="card" key={index}>
+      <img src={icon.src} alt={icon.alt} width="40" height="40" />
+    </div>
+  ));
+
   return (
-      <div className="carousel">
-            <div className='group'>
-              <div className="card"> <img src= {html5Icon} alt="HTML5" width="40" height="40" />   </div>
-              <div className="card"> <img src= {css3Icon} alt="css" width="40" height="40" /></div>
-              <div className="card"> <img src= {jsIcon} alt="js" width="40" height="40" /></div>
-              <div className="card"> <img src= {reactIcon} alt="react" width="40" height="40" /></div>
-              <div className="card"> <img src= {figmaIcon} alt="figma" width="40" height="40" /></div>
-              <div className="card"> <img src= {githubIcon} alt="github" width="40" height="40" /></div>
-              <div className="card"> <img src= {wordpressIcon} alt="wordpress" width="40" height="40" /></div>
-            </div>
-            <div className='group'>
-              <div className="card"> <img src= {html5Icon} alt="HTML5" width="40" height="40" />   </div>
-              <div className="card"> <img src= {css3Icon} alt="css" width="40" height="40" /></div>
-              <div className="card"> <img src= {jsIcon} alt="js" width="40" height="40" /></div>
-              <div className="card"> <img src= {reactIcon} alt="react" width="40" height="40" /></div>
-              <div className="card"> <img src= {figmaIcon} alt="figma" width="40" height="40" /></div>
-              <div className="card"> <img src= {githubIcon} alt="github" width="40" height="40" /></div>
-              <div className="card"> <img src= {wordpressIcon} alt="wordpress" width="40" height="40" /></div>
-            </div>
-          </div>    
-  )
-}
+    <div className="carousel">
+      <div className="group">{content}</div>
+      <div className="group" aria-hidden="true">{content}</div>
+    </div>
+  );
+};

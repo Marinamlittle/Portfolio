@@ -63,10 +63,10 @@ export function Tecnologias() {
     );
 
     return (
-        <section className='fondo-tecnologias' >
+        <section className='fondo-tecnologias' id="tecnologias" >
             
             <h2 className="titulo-tecnologias" >Tecnologías</h2>
-            <p className="descripcion"  id="tecnologias">Mi trabajo se centra en el punto donde el diseño y la funcionalidad se encuentran. Como Frontend Developer, me especializo en construir interfaces que no solo sean visualmente atractivas, sino también intuitivas y accesibles. Mi objetivo es que cada interacción del usuario sea fluida, utilizando arquitecturas modernas para garantizar que el rendimiento sea óptimo en cualquier dispositivo."</p>
+            <p className="descripcion"  >Mi trabajo se centra en el punto donde el diseño y la funcionalidad se encuentran. Como Frontend Developer, me especializo en construir interfaces que no solo sean visualmente atractivas, sino también intuitivas y accesibles. Mi objetivo es que cada interacción del usuario sea fluida, utilizando arquitecturas modernas para garantizar que el rendimiento sea óptimo en cualquier dispositivo.</p>
 
             <div className="contenedor-cards">
 

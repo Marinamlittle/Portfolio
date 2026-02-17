@@ -6,7 +6,7 @@ export const PrimerComponente = () => {
   const [isOpen, setIsOpen] = useState(false); 
 
   const menuItems = [
-    { id: 'inicio', label: 'Inicio' },
+    // { id: 'inicio', label: 'Inicio' },
     { id: 'sobremi', label: 'Sobre mí' },
     { id: 'tecnologias', label: 'Tecnologías' },
     { id: 'proyectos', label: 'Proyectos' },

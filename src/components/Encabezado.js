@@ -31,20 +31,22 @@ export const Encabezado = () => {
           href={misDatos.linkedin}
           target="_blank" 
           rel="noreferrer" 
+          className="hvr-icon-down" 
           aria-label="Visitar perfil de LinkedIn"
         >
-          <FaLinkedin className="social-icon" />
+          <FaLinkedin className="social-icon hvr-icon" /> 
         </a> 
         
         <a 
           href={misDatos.github}
           target="_blank" 
           rel="noreferrer" 
+          className="hvr-icon-down"
           aria-label="Visitar perfil de GitHub"
         >
-          <FaGithub className="social-icon" />
+          <FaGithub className="social-icon hvr-icon" /> 
         </a>
-      </div>
+    </div>
     </section>
   );
 };

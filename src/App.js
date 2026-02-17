@@ -8,6 +8,8 @@ import { PrimerComponente } from './components/PrimerComponente';
 import { Tecnologias } from './components/Tecnologias';
 import { Proyectos } from './components/Proyectos';
 
+import './css/hover.css'; 
+import 'animate.css';
 import './css/style.css';
 
 function App() {

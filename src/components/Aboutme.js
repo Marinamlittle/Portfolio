@@ -9,8 +9,8 @@ export const Aboutme = () => {
   return (
     <section className="aboutme-container" >
 
-      <div className='card-border-animated' >
-        <div className='contenido' id='sobremi'>
+      <div className='card-border-animated'id='sobremi' >
+        <div className='contenido' >
           <h2 className="titulo-aboutme" >Sobre mí</h2>
           <div className='texto-aboutme' >
             <p>
@@ -37,7 +37,7 @@ export const Aboutme = () => {
             <a 
                 href="/MMLCV.pdf"
                 download="CV_Marina_Mateo.pdf"
-                className="CV" 
+                className="hvr-sweep-to-bottom" 
                 style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
                 <img src={CV_Icono} alt="Icono CV" width="20" height="20" />
                 <span>Descargar CV</span>
@@ -48,7 +48,7 @@ export const Aboutme = () => {
       </div>
 
             {/* Hablamos? */}
-      <div className='hablamos'>
+      <div className='hablamos' >
           <p className='texto-hablamos'>¿Hablamos?</p>
           <div className='iconos-hablamos'>
             <a href="mailto:marinaml201101@gmail.com" title="Enviar Correo">
