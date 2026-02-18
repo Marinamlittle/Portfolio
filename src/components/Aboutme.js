@@ -34,14 +34,15 @@ export const Aboutme = () => {
             </p>
             
             {/* BOTON CV */}
-            <a 
-                href="/MMLCV.pdf"
-                download="CV_Marina_Mateo.pdf"
-                className="hvr-sweep-to-bottom" 
-                style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img src={CV_Icono} alt="Icono CV" width="20" height="20" />
-                <span>Descargar CV</span>
-            </a> 
+              <a 
+                  href={process.env.PUBLIC_URL + '/MMLCV.pdf'}  /* <--- CAMBIO AQUÍ */
+                  download="CV_Marina_Mateo.pdf"
+                  className="hvr-sweep-to-bottom" 
+                  style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+              >
+                  <img src={CV_Icono} alt="Icono CV" width="20" height="20" />
+                  <span>Descargar CV</span>
+              </a> 
 
           </div>
         </div>
