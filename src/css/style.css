@@ -11,6 +11,26 @@
     --azul-claro: #4D7598;
 }
 
+/* main container */
+.main-container {
+    width: 100%;          /* Ocupa todo el ancho disponible */
+    max-width: 100%;      /* IMPORTANTE: Quitamos el límite de 1980px */
+    margin: 0;
+    padding: 0;           /* El padding lo manejaremos dentro de las secciones */
+    position: relative;
+    overflow-x: hidden;   /* Evita que el cursor o animaciones generen scroll lateral */
+}
+.limite-ancho {
+    max-width: 1300px;    /* El punto dulce entre portátiles y pantallas grandes */
+    margin: 0 auto;       /* Centra el contenido */
+    padding: 0 40px;      /* Margen de seguridad para móviles/tablets */
+    width: 100%;
+}
+body {
+    background-color: #1C1C1C; /* Cambia por tu color de fondo */
+    margin: 0;
+}
+
 /*Cursor*/
 .cursor-trail {
     width: 80px;
@@ -35,19 +55,36 @@ html{
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
 }
-
 /* --- ESTILOS BASE (ESCRITORIO) --- */
+
 .navbar {
     background-color: var(--negro);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 40px;
     position: sticky; 
     height: 100px;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--blanco-hueso) ;
+    border-bottom: 1px solid var(--blanco-hueso);
+    padding: 0 10px; 
+}
+
+.limite-ancho {
+    max-width: 1200px;      
+    margin: 0 auto;
+    width: 100%;            
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 820px) {
+    .navbar {
+        padding: 0 20px; 
+    }
+    .menu {
+        left: 0;
+        width: 100%;
+    }
 }
 
 .intro {
@@ -78,7 +115,7 @@ html{
 .profesion-encabezado {
     font-size: 13px;
     color: var(--azul);
-    font-weight: 600;
+    font-weight: 500;
     margin: 0;
     letter-spacing: 1.2px;
     transition: 0.3s;
@@ -232,6 +269,12 @@ html{
     text-align: center;
     padding: 150px 10px;
 }
+@media (min-width: 1024px) and (max-width: 1980px) {
+    .seccion-inicio{
+        padding: 100px 10px;
+
+    }
+}
 
 
 .titulo-seccion{
@@ -263,7 +306,7 @@ html{
 }
 .social-icon:hover {
     color: var(--azul);
-    transform: scale(1.2);
+    transform: scale(1.1);
     filter: drop-shadow(0 0 10px var(--negro));
 }
 
@@ -383,6 +426,7 @@ html{
     filter: brightness(1); 
     transition: filter 0.3s ease;
 }
+
 /*Carousel*/
 @keyframes spin {
     0% {
@@ -549,10 +593,10 @@ html{
 /* --- TABLETS (Menos de 820px) --- */
 @media (max-width: 820px) {
     .aboutme-container{
-        min-height: 60vh;
+        min-height: 50vh;
     }
     .contenido {
-        padding: 30px 25px; /* Menos espacio lateral */
+        padding: 30px 25px; 
     }
 
     .card-border-animated {
@@ -572,10 +616,9 @@ html{
 
 /* --- MÓVILES (Menos de 480px) --- */
 @media (max-width: 480px) {
-    .aboutme-container {
-        min-height: 90vh; 
+    .aboutme-container{
+        height: 100vh;
     }
-
     .contenido {
         padding: 30px 20px;
     }
@@ -762,12 +805,14 @@ html{
     transform: translateY(0px);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
+/*proyectos*/
+
 .card-link {
-    display: flex;          /* Vuelve a poner la imagen al lado del texto */
+    display: flex;
     align-items: flex-start;
-    text-decoration: none;  /* Quita el subrayado azul */
-    color: inherit;         /* Mantiene tus colores originales de texto */
-    gap: 10px;              /* Espacio entre imagen e info */
+    text-decoration: none;
+    color: inherit;
+    gap: 10px;
     width: 90%;
     padding: 0.5rem;
 }
@@ -955,6 +1000,23 @@ html{
     height: 70vh; 
     overflow: hidden;
 }
+@media (min-width: 1024px) and (max-width: 1980px) {
+    .proyecto {
+        padding-top: 80px;
+        height: 90vh;
+    }
+    
+    .card-proyecto {
+        display: flex;
+        padding: 5px;
+        border-radius: 10px;
+        gap: 5px;
+        transition: background 0.3s ease;
+        cursor: pointer;
+        width: 90%;
+    }
+    
+}
 .caja-izquierda {
     flex: 1;
     display: flex;
@@ -986,19 +1048,18 @@ html{
     padding-bottom: 250px;
 }
 
-
 .boton-seccion-proyectos{
     display: flex;
     gap: 1rem;
     justify-content: left;
     
 }
+
 /*caja derecha proyectos*/
 .caja-derecha {
     flex: 1.5; 
     padding-top: 10px;
     padding-bottom: 20px;
-
     display: flex;
     flex-direction: column;
     &::-webkit-scrollbar {
@@ -1028,9 +1089,6 @@ html{
     width: 90%;
 }
 
-.card-proyecto:hover {
-    background: var(--amarillo-pastel);
-}
 .card-proyecto:hover h4{
     color: var(--azul-claro);
     letter-spacing: 1px;
@@ -1131,12 +1189,9 @@ html{
     }
 
 
-    .boton-seccion-proyectos {
-        justify-content: center;
-    }
 
     .caja-derecha {
-        overflow: visible;      /* Quitamos el scroll interno */
+        overflow: visible;
         flex: none;
         width: 100%;
         align-items: center;
