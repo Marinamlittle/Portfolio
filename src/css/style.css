@@ -615,9 +615,13 @@ html{
 }
 
 /* --- MÓVILES (Menos de 480px) --- */
-@media (max-width: 480px) {
-    .aboutme-container{
-        height: 100vh;
+    @media (max-width: 480px) {
+        .aboutme-container {
+            min-height: auto;       /* Deja que la altura sea la que necesite el texto */
+            padding-top: 80px;      /* Empuja el contenido hacia abajo para que no choque */
+            padding-bottom: 80px;   /* Espacio abajo para que el botón "Hablamos" no tape texto */
+            align-items: flex-start; /* Quita el centrado vertical forzado */
+        }
     }
     .contenido {
         padding: 30px 20px;
